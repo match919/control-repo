@@ -13,10 +13,5 @@ class profile::r10k {
   class {'r10k::webhook':
     user  => 'root',
     group => '0',
-    R10k::Webhook::Config::Server::Tls $tls    = {
-      enabled     => false,
-      certificate => undef,
-      key         => undef,
-    },
   }
 }
