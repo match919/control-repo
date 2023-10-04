@@ -10,13 +10,14 @@ class profile::r10k {
     },
     manage_modulepath => false
   }
-  class {'r10k::webhook::config':
-    use_mcollective => false,
-    enable_ssl      => false,
-  }
   class {'r10k::webhook':
     user  => 'root',
     group => '0',
+    R10k::Webhook::Config::Server::Tls $tls    = {
+      enabled     => false,
+      certificate => undef,
+      key         => undef,
+    },
   }
   Class['r10k::webhook::config'] -> Class['r10k::webhook']
 }
