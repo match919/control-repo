@@ -19,5 +19,4 @@ class profile::r10k {
       key         => undef,
     },
   }
-  Class['r10k::webhook::config'] -> Class['r10k::webhook']
 }
