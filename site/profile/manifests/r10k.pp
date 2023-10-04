@@ -1,6 +1,6 @@
 class profile::r10k {
   class {'r10k':
-    version => '1.5.1',
+    version => '3.15.2',
     sources => {
      'puppet' => {
         'remote' => 'https://github.com/match919/control-repo/',
