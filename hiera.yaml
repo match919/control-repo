@@ -15,4 +15,4 @@ hierarchy:
     path: 'os/family/%{facts.os.family}.yaml'
 
   - name: Common
-    path: common.yaml
+    path: data/common.yaml
