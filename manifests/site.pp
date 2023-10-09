@@ -1,13 +1,10 @@
-node puppet.local {
-  include role::master
-}
-node puppet.qualcomm.com {
-  include role::master
-  file {'/etc/secret_password.txt':
+node default {
+  file { '/root/README':
     ensure => file,
-    content => lookup('secret_password'),
+    content => 'This is a readme',
+    owner   => 'root',
   }
 }
-node default {
-  include role::master
+node 'master.puppet.vm' {
+  include role::master_server
 }
